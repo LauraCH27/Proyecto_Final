@@ -44,6 +44,7 @@
     <Compile Include="CDINGREDIENTES.cs" />
     <Compile Include="CDMENU.cs" />
     <Compile Include="CDRECETA.cs" />
+    <Compile Include="Conexion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
