@@ -222,6 +222,15 @@ namespace Formulario1
         protected global::System.Web.UI.WebControls.Label lblconsulta;
 
         /// <summary>
+        /// Control lblelimar_ingred.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblelimar_ingred;
+
+        /// <summary>
         /// Control lblmodifica.
         /// </summary>
         /// <remarks>
@@ -249,6 +258,15 @@ namespace Formulario1
         protected global::System.Web.UI.WebControls.Button btnconsuta;
 
         /// <summary>
+        /// Control bteliminar_ingre.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button bteliminar_ingre;
+
+        /// <summary>
         /// Control btnmodifica.
         /// </summary>
         /// <remarks>
@@ -265,5 +283,14 @@ namespace Formulario1
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnvolver;
+
+        /// <summary>
+        /// Control Image1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image Image1;
     }
 }

@@ -22,7 +22,7 @@ namespace Formulario1
 
         protected void btnguarda_Click(object sender, EventArgs e)
         {
-            OEingrediente.Fuente_receta = Convert.ToInt32(txtfuente.Text);
+            OEingrediente.Codigo_ingrediente = Convert.ToInt32(txtfuente.Text);
             OEingrediente.Ubicacion_fisica = Convert.ToString(txtubicacion.Text);
             OEingrediente.Lista_ingredientes = Convert.ToString(txtlista.Text);
             OEingrediente.Tiempo_preparacion = Convert.ToDateTime(txttiempo.Text);
@@ -49,7 +49,7 @@ namespace Formulario1
         protected void btnconsuta_Click(object sender, EventArgs e)
         {
             DataSet ds = new DataSet();//Puente para realizar las consultas
-            OEingrediente.Fuente_receta = Convert.ToInt32(txtfuente.Text);
+            OEingrediente.Codigo_ingrediente = Convert.ToInt32(txtfuente.Text);
             ds = ONingrediente.consultar_ingrediente(OEingrediente);
             if (ds.Tables[0].Rows.Count == 0)
             {
@@ -72,7 +72,7 @@ namespace Formulario1
 
         protected void btnmodifica_Click(object sender, EventArgs e)
         {
-            OEingrediente.Fuente_receta = Convert.ToInt32(txtfuente.Text);
+            OEingrediente.Codigo_ingrediente = Convert.ToInt32(txtfuente.Text);
             OEingrediente.Ubicacion_fisica = Convert.ToString(txtubicacion.Text);
             OEingrediente.Lista_ingredientes = Convert.ToString(txtlista.Text);
             OEingrediente.Tiempo_preparacion = Convert.ToDateTime(txttiempo.Text);
@@ -99,5 +99,35 @@ namespace Formulario1
             Response.Redirect("formularios.aspx");
 
         }
+
+        protected void bteliminar_ingre_Click(object sender, EventArgs e)
+        {
+            OEingrediente.Codigo_ingrediente = Convert.ToInt32(txtfuente.Text);
+            if (ONingrediente.anular_ingrediente(OEingrediente))
+            {
+                lblelimar_ingred.Text = "Menu se ha eliminado correctamente";
+            }
+            else
+            {
+                lblelimar_ingred.Text = "No se puedo eliminar la Menu";
+            }
+            limpiar_campos();
+
+        }
+        public void limpiar_campos()
+        {
+            txtubicacion.Text = "";
+            txtlista.Text = "";
+            txttiempo.Text = "";
+            txtutencilios.Text = "";
+            txtcocina.Text = "";
+            txtplato.Text = "";
+            txtprecio.Text = "";
+            txtcantidad.Text = "";
+            txtmedida.Text = "";
+        }
+
     }
+  
 }
+

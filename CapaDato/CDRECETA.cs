@@ -82,7 +82,7 @@ namespace CapaDato
 
         }
 
-        /*public bool Eliminar_receta(CERECETA oingre) 
+        public bool anular_receta(CERECETA oingre) 
         {
             try
             {
@@ -98,6 +98,6 @@ namespace CapaDato
 
                 throw;
             }
-        }*/
+        }
     }
 }

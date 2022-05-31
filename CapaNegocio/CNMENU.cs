@@ -18,11 +18,16 @@ namespace CapaNegocio
         }
         public bool Anular_menu(CEMENU oeningre)
         {
-            return odaingr.Anular_menu(oeningre);
+            return odaingr.anular_menu(oeningre);
         }
         public DataSet consultar_menu(CEMENU oeningre)
         {
             return odaingr.Consultar_menu(oeningre);
         }
+        public bool Modificar_menu(CEMENU oeningre)
+        {
+            return odaingr.Modificar_menu(oeningre);
+        }
+
     }
 }

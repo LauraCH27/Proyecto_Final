@@ -32,17 +32,17 @@ namespace Formulario1
             OEreceta.Codigo_de_ingrediente = Convert.ToInt32(txtingrediente.Text);
             OEreceta.Nombre_ingredientes = Convert.ToString(txtnom.Text);
             OEreceta.Codigo_menu = Convert.ToInt32(txtmenu.Text);
-
+            
             if (ONreceta.Guardar_receta(OEreceta))
             {
+                limpiar();
                 lblrespuesta.Text = "Receta guardada";
             }
             else
             {
+                limpiar();
                 lblrespuesta.Text = "Receta no guardada";
             }
-
-
         }
 
         protected void btnconsultar_Click(object sender, EventArgs e)
@@ -50,12 +50,16 @@ namespace Formulario1
             DataSet ds = new DataSet();//Puente para realizar las consultas
             OEreceta.Cod_receta = Convert.ToInt32(txtcod.Text);
             ds = ONreceta.consultar_receta(OEreceta);
+           
             if (ds.Tables[0].Rows.Count == 0)
             {
+                limpiar();
                 lblconsultar.Text = "No hay recetas";
+                
             }
             else
             {
+                limpiar();
                 txttiempo.Text = ds.Tables[0].Rows[0]["Tiempo_receta"].ToString();
                 txtnombre.Text = ds.Tables[0].Rows[0]["Nombre_plato"].ToString();
                 txtreceta.Text = ds.Tables[0].Rows[0]["Recetas"].ToString();
@@ -66,7 +70,6 @@ namespace Formulario1
                 //txtactivo.Text = ds.Tables[0].Rows[0]["Activo"].ToString();
 
             }
-
         }
 
         /*protected void btnmodificar_Click(object sender, EventArgs e)
@@ -76,15 +79,7 @@ namespace Formulario1
 
         /* protected void btnelim_Click(object sender, EventArgs e)
          {
-             OEreceta.Cod_receta = Convert.ToInt32(txtcod.Text);
-             if (ONreceta.Eliminar_receta(OEreceta))
-             {
-                 lblelimin.Text = "Receta se ha eliminado correctamente";
-             }
-             else
-             {
-                 lblelimin.Text = "No se puedo eliminar la receta";
-             }
+             
          }*/
 
         protected void btneliminar_Click(object sender, EventArgs e)
@@ -98,13 +93,16 @@ namespace Formulario1
             OEreceta.Nombre_ingredientes = Convert.ToString(txtnom.Text);
             OEreceta.Codigo_menu = Convert.ToInt32(txtmenu.Text);
 
-
             if (ONreceta.Anular_receta(OEreceta))
             {
+                limpiar();
+
                 lblmodificar.Text = "Receta se ha modificado correctamente";
+                
             }
             else
             {
+                limpiar();
                 lblmodificar.Text = "No se puedo modificar la receta";
             }
 
@@ -116,15 +114,17 @@ namespace Formulario1
             OEmenu.Platos_menu = Convert.ToString(txtplatos.Text);
             OEmenu.Precio_menu = Convert.ToString(txtpre.Text);
             OEmenu.Comentario_menu = Convert.ToString(txtcomentario.Text);
+         
             if (ONmenu.Guardar_menu(OEmenu))
             {
+                limpiar();
                 lblguarda.Text = "Menu guardado";
             }
             else
             {
+                limpiar();
                 lblguarda.Text = "Menu no guardado";
             }
-
         }
 
         protected void btnconsulta_menu_Click(object sender, EventArgs e)
@@ -132,12 +132,16 @@ namespace Formulario1
             DataSet ds = new DataSet();
             OEmenu.Codigo_menu = Convert.ToInt32(txtmen.Text);
             ds = ONmenu.consultar_menu(OEmenu);
+          
             if (ds.Tables[0].Rows.Count == 0)
             {
+                limpiar();
+
                 lblconsulta.Text = "No hay menu";
             }
             else
             {
+                limpiar();
                 txtplatos.Text = ds.Tables[0].Rows[0]["Platos_menu"].ToString();
                 txtpre.Text = ds.Tables[0].Rows[0]["Precio_menu"].ToString();
                 txtcomentario.Text = ds.Tables[0].Rows[0]["Comentario_menu"].ToString();
@@ -151,21 +155,89 @@ namespace Formulario1
             OEmenu.Platos_menu = Convert.ToString(txtplatos.Text);
             OEmenu.Precio_menu = Convert.ToString(txtpre.Text);
             OEmenu.Comentario_menu = Convert.ToString(txtcomentario.Text);
-            if (ONmenu.Anular_menu(OEmenu))
+          
+            if (ONmenu.Modificar_menu(OEmenu))
             {
+                limpiar();
+
                 lblmodifica.Text = "Receta se ha modificado correctamente";
             }
             else
             {
+                limpiar();
                 lblmodifica.Text = "No se puedo modificar la receta";
             }
-
         }
 
         protected void btningredientes_Click(object sender, EventArgs e)
         {
-            Response.Redirect("ingredientes.aspx");
-                
+            Response.Redirect("ingredientes.aspx");  
+        }
+
+        protected void btneliminar_Click1(object sender, EventArgs e)
+        {
+            OEreceta.Cod_receta = Convert.ToInt32(txtcod.Text);
+            
+            if (ONreceta.Eliminar_receta(OEreceta))
+
+            {
+                limpiar();
+
+                lblelimin.Text = "Receta se ha eliminado correctamente";
+            }
+            else
+            {
+                limpiar();
+                lblelimin.Text = "No se puedo eliminar la receta";
+            }
+
+            limpiar_campos();
+        }
+        public void limpiar_campos()
+        {
+            txtcod.Text = "";
+            txttiempo.Text = "";
+            txtnombre.Text = "";
+            txtreceta.Text = "";
+            txtcodigo.Text = "";
+            txtingrediente.Text = "";
+            txtnom.Text = "";
+            txtmenu.Text = "";
+            txtplatos.Text = "";
+            txtpre.Text = "";
+            txtcomentario.Text = "";
+            
+        }
+        public void limpiar()
+        {
+            lblrespuesta.Text = "";
+            lblmodificar.Text = "";
+            lblconsultar.Text = "";
+            lblelimin.Text = "";
+            lblguarda.Text = "";
+            lblconsulta.Text = "";
+            lbleliminar.Text = "";
+            lblmodifica.Text = "";                
+
+        }
+       
+
+        protected void btnelimin_Click(object sender, EventArgs e)
+        {
+            OEmenu.Codigo_menu = Convert.ToInt32(txtmen.Text);
+            
+            if (ONmenu.Anular_menu(OEmenu))
+            {
+                limpiar();
+                lbleliminar.Text = "Menu se ha eliminado correctamente";
+            }
+            else
+            {
+                limpiar();
+                lbleliminar.Text = "No se puedo eliminar la Menu";
+            }
+            limpiar_campos();
+
         }
     }
 }

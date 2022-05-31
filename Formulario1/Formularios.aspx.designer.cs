@@ -186,6 +186,15 @@ namespace Formulario1
         protected global::System.Web.UI.WebControls.Label lblconsultar;
 
         /// <summary>
+        /// Control lblelimin.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblelimin;
+
+        /// <summary>
         /// Control lblmodificar.
         /// </summary>
         /// <remarks>
@@ -211,6 +220,15 @@ namespace Formulario1
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnconsultar;
+
+        /// <summary>
+        /// Control btneliminar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btneliminar;
 
         /// <summary>
         /// Control btnmodificar.
@@ -312,6 +330,15 @@ namespace Formulario1
         protected global::System.Web.UI.WebControls.Label lblconsulta;
 
         /// <summary>
+        /// Control lbleliminar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbleliminar;
+
+        /// <summary>
         /// Control lblmodifica.
         /// </summary>
         /// <remarks>
@@ -339,6 +366,15 @@ namespace Formulario1
         protected global::System.Web.UI.WebControls.Button btnconsulta_menu;
 
         /// <summary>
+        /// Control btnelimin.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnelimin;
+
+        /// <summary>
         /// Control btnmodifica_menu.
         /// </summary>
         /// <remarks>
@@ -355,5 +391,14 @@ namespace Formulario1
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btningredientes;
+
+        /// <summary>
+        /// Control Image1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image Image1;
     }
 }

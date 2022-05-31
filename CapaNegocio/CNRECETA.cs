@@ -24,9 +24,9 @@ namespace CapaNegocio
         {
             return odaingr.Consultar_receta(oeningre);
         }
-        /*public bool Eliminar_receta(CERECETA oeningre)
+        public bool Eliminar_receta(CERECETA oeningre)
         {
-            return odaingr.Eliminar_receta(oeningre);
-        }*/
+            return odaingr.anular_receta(oeningre);
+        }
     }
 }

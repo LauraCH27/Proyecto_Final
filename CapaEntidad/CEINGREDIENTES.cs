@@ -8,7 +8,7 @@ namespace CapaEntidad
 {
     public class CEINGREDIENTES
     {
-        private int fuente_receta;
+        private int codigo_ingrediente;
         private string ubicacion_fisica;
         private string lista_ingredientes;
         private DateTime tiempo_preparacion;
@@ -19,7 +19,8 @@ namespace CapaEntidad
         private int cantidad_ingredientes;
         private int unidades_medida_ingredientes;
         private byte activo;
-        public int Fuente_receta { get => fuente_receta; set => fuente_receta = value; }
+
+        public int Codigo_ingrediente { get => codigo_ingrediente; set => codigo_ingrediente = value; }
         public string Ubicacion_fisica { get => ubicacion_fisica; set => ubicacion_fisica = value; }
         public string Lista_ingredientes { get => lista_ingredientes; set => lista_ingredientes = value; }
         public DateTime Tiempo_preparacion { get => tiempo_preparacion; set => tiempo_preparacion = value; }

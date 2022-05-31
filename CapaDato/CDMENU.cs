@@ -35,7 +35,7 @@ namespace CapaDato
                 throw;
             }
         }
-        public bool Anular_menu(CEMENU oingre)
+        public bool Modificar_menu(CEMENU oingre)
         {
             try
             {
@@ -73,7 +73,24 @@ namespace CapaDato
                 throw;
             }
 
+
+        }
+        public bool anular_menu(CEMENU oingre)
+        {
+            try
+            {
+                ocmd.CommandType = CommandType.StoredProcedure;
+                ocmd.Connection = oconexion.conectar("BDPROYECTO");
+                ocmd.CommandText = "Anular_Menu";
+                ocmd.Parameters.AddWithValue("@codigo_menu", oingre.Codigo_menu);
+                ocmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
-    }
+        }
 }

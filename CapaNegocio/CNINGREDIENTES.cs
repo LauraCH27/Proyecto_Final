@@ -19,12 +19,17 @@ namespace CapaNegocio
         }
         public bool anular_ingrediente(CEINGREDIENTES oeningre)
         {
-            return odaingr.Anular_ingredientes(oeningre);
+            return odaingr.anular_ingredientes(oeningre);
         }
         public DataSet consultar_ingrediente(CEINGREDIENTES oeningre)
         {
             return odaingr.Consultar_ingredientes(oeningre);
         }
+        public bool modificar_ingrediente(CEINGREDIENTES oeningre)
+        {
+            return odaingr.modificar_ingredientes(oeningre);
+        }
+
 
     }
 }

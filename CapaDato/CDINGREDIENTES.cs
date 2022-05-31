@@ -21,7 +21,7 @@ namespace CapaDato
                 ocmd.CommandType = CommandType.StoredProcedure;
                 ocmd.Connection = oconexion.conectar("BDPROYECTO");
                 ocmd.CommandText = "agregar_ingrediente";
-                ocmd.Parameters.AddWithValue("@fuente_receta", oingre.Fuente_receta);
+                ocmd.Parameters.AddWithValue("@codigo_ingrediente", oingre.Codigo_ingrediente);
                 ocmd.Parameters.AddWithValue("@ubicacion_fisica", oingre.Ubicacion_fisica);
                 ocmd.Parameters.AddWithValue("@lista_ingredientes", oingre.Lista_ingredientes);
                 ocmd.Parameters.AddWithValue("@tiempo_preparacion", oingre.Tiempo_preparacion);
@@ -42,14 +42,14 @@ namespace CapaDato
             }
 
         }
-        public bool Anular_ingredientes(CEINGREDIENTES oingre)
+        public bool modificar_ingredientes(CEINGREDIENTES oingre)
         {
             try
             {
                 ocmd.CommandType = CommandType.StoredProcedure;
                 ocmd.Connection = oconexion.conectar("BDPROYECTO");
                 ocmd.CommandText = "modificar_ingrediente";
-                ocmd.Parameters.AddWithValue("@fuente_receta", oingre.Fuente_receta);
+                ocmd.Parameters.AddWithValue("@codigo_ingrediente", oingre.Codigo_ingrediente);
                 ocmd.Parameters.AddWithValue("@ubicacion_fisica", oingre.Ubicacion_fisica);
                 ocmd.Parameters.AddWithValue("@lista_ingredientes", oingre.Lista_ingredientes);
                 ocmd.Parameters.AddWithValue("@tiempo_preparacion", oingre.Tiempo_preparacion);
@@ -75,11 +75,11 @@ namespace CapaDato
                 ocmd.CommandType = CommandType.StoredProcedure;
                 ocmd.Connection = oconexion.conectar("BDPROYECTO");
                 ocmd.CommandText = "Consultar_ingrediente";
-                ocmd.Parameters.AddWithValue("@fuente_receta", oingre.Fuente_receta);
+                ocmd.Parameters.AddWithValue("@codigo_ingrediente", oingre.Codigo_ingrediente);
                 SqlDataAdapter da = new SqlDataAdapter(ocmd);
                 DataSet ds = new DataSet();
                 da.Fill(ds);
-                return ds; 
+                return ds;
             }
             catch (Exception)
             {
@@ -87,8 +87,23 @@ namespace CapaDato
             }
 
         }
+        public bool anular_ingredientes(CEINGREDIENTES oingre)
+        {
+            try
+            {
+                ocmd.CommandType = CommandType.StoredProcedure;
+                ocmd.Connection = oconexion.conectar("BDPROYECTO");
+                ocmd.CommandText = "anular_ingrediente";
+                ocmd.Parameters.AddWithValue("@codigo_ingrediente", oingre.Codigo_ingrediente);
+                ocmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+
+        }
     }
-            
-    
-  
 }
