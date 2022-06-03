@@ -16,6 +16,9 @@ namespace Formulario1
         CERECETA OEreceta = new CERECETA();
         CNMENU ONmenu = new CNMENU();
         CEMENU OEmenu = new CEMENU();
+        DataSet ds = new DataSet();
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -24,6 +27,10 @@ namespace Formulario1
 
         protected void btnguardar_Click(object sender, EventArgs e)
         {
+            
+            
+            
+           
             OEreceta.Cod_receta = Convert.ToInt32(txtcod.Text);
             OEreceta.Tiempo_receta = Convert.ToDateTime(txttiempo.Text);
             OEreceta.Nombre_plato = Convert.ToString(txtnombre.Text);
@@ -43,6 +50,7 @@ namespace Formulario1
                 limpiar();
                 lblrespuesta.Text = "Receta no guardada";
             }
+            limpiar_campos();
         }
 
         protected void btnconsultar_Click(object sender, EventArgs e)
@@ -70,6 +78,7 @@ namespace Formulario1
                 //txtactivo.Text = ds.Tables[0].Rows[0]["Activo"].ToString();
 
             }
+           
         }
 
         /*protected void btnmodificar_Click(object sender, EventArgs e)
@@ -84,6 +93,7 @@ namespace Formulario1
 
         protected void btneliminar_Click(object sender, EventArgs e)
         {
+            
             OEreceta.Cod_receta = Convert.ToInt32(txtcod.Text);
             OEreceta.Tiempo_receta = Convert.ToDateTime(txttiempo.Text);
             OEreceta.Nombre_plato = Convert.ToString(txtnombre.Text);
@@ -105,6 +115,7 @@ namespace Formulario1
                 limpiar();
                 lblmodificar.Text = "No se puedo modificar la receta";
             }
+            limpiar_campos();
 
         }
 
@@ -125,6 +136,7 @@ namespace Formulario1
                 limpiar();
                 lblguarda.Text = "Menu no guardado";
             }
+            limpiar_campos();
         }
 
         protected void btnconsulta_menu_Click(object sender, EventArgs e)
@@ -147,6 +159,7 @@ namespace Formulario1
                 txtcomentario.Text = ds.Tables[0].Rows[0]["Comentario_menu"].ToString();
 
             }
+            
         }
 
         protected void btnmodifica_menu_Click(object sender, EventArgs e)
@@ -167,6 +180,7 @@ namespace Formulario1
                 limpiar();
                 lblmodifica.Text = "No se puedo modificar la receta";
             }
+            limpiar_campos();
         }
 
         protected void btningredientes_Click(object sender, EventArgs e)
@@ -234,7 +248,7 @@ namespace Formulario1
             else
             {
                 limpiar();
-                lbleliminar.Text = "No se puedo eliminar la Menu";
+                lbleliminar.Text = "No se puedo eliminar el Menu";
             }
             limpiar_campos();
 

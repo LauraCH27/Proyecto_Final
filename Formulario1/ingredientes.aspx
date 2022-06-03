@@ -126,7 +126,7 @@
                 <td class="auto-style7">
                     <asp:TextBox ID="txtfuente" runat="server" Width="210px"></asp:TextBox>
                 </td>
-                <td class="auto-style13">&nbsp;</td>
+                
                 <td>TABLA DE INGREDIENTES</td>
             </tr>
             <tr>

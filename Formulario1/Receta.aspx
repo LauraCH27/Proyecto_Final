@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Formularios.aspx.cs" Inherits="Formulario1.formul" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Receta.aspx.cs" Inherits="Formulario1.formul" %>
 
 <!DOCTYPE html>
 

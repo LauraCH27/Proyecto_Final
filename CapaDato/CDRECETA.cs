@@ -70,7 +70,7 @@ namespace CapaDato
                 ocmd.Connection = oconexion.conectar("BDPROYECTO");
                 ocmd.CommandText = "Consultar_receta";
                 ocmd.Parameters.AddWithValue("@cod_receta", oingre.Cod_receta);
-                SqlDataAdapter da = new SqlDataAdapter(ocmd);
+                SqlDataAdapter da = new SqlDataAdapter(ocmd);//puente para consultar 
                 DataSet ds = new DataSet();
                 da.Fill(ds);
                 return ds;

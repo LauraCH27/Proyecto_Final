@@ -35,12 +35,15 @@ namespace Formulario1
 
             if (ONingrediente.guardar_ingredientes(OEingrediente))
             {
+                limpiar();
                 lblguarda.Text = "Ingrediente guardado";
             }
             else
             {
+                limpiar();
                 lblguarda.Text = "Ingrediente no guardado";
             }
+            limpiar_campos();
 
 
 
@@ -53,10 +56,12 @@ namespace Formulario1
             ds = ONingrediente.consultar_ingrediente(OEingrediente);
             if (ds.Tables[0].Rows.Count == 0)
             {
+                limpiar();
                 lblconsulta.Text = "No hay recetas";
             }
             else
             {
+                limpiar();
                 txtubicacion.Text = ds.Tables[0].Rows[0]["Ubicacion_fisica"].ToString();
                 txtlista.Text = ds.Tables[0].Rows[0]["Lista_ingredientes"].ToString();
                 txttiempo.Text = ds.Tables[0].Rows[0]["Tiempo_preparacion"].ToString();
@@ -68,6 +73,7 @@ namespace Formulario1
                 txtmedida.Text = ds.Tables[0].Rows[0]["Unidades_medida_ingredientes"].ToString();
 
             }
+          
         }
 
         protected void btnmodifica_Click(object sender, EventArgs e)
@@ -85,12 +91,15 @@ namespace Formulario1
 
             if (ONingrediente.anular_ingrediente(OEingrediente))
             {
+                limpiar();
                 lblmodifica.Text = "El ingrediente se ha modificado correctamente";
             }
             else
             {
+                limpiar();
                 lblmodifica.Text = "No se puedo modificar El ingrediente";
             }
+            limpiar_campos();
 
         }
 
@@ -105,10 +114,12 @@ namespace Formulario1
             OEingrediente.Codigo_ingrediente = Convert.ToInt32(txtfuente.Text);
             if (ONingrediente.anular_ingrediente(OEingrediente))
             {
+                limpiar();
                 lblelimar_ingred.Text = "Menu se ha eliminado correctamente";
             }
             else
             {
+                limpiar();
                 lblelimar_ingred.Text = "No se puedo eliminar la Menu";
             }
             limpiar_campos();
@@ -125,6 +136,14 @@ namespace Formulario1
             txtprecio.Text = "";
             txtcantidad.Text = "";
             txtmedida.Text = "";
+        }
+        public void limpiar()
+        {
+            lblconsulta.Text = "";
+            lblguarda.Text = "";
+            lblelimar_ingred.Text = "";
+           lblmodifica.Text = "";
+
         }
 
     }
